@@ -35,6 +35,7 @@ import VerifyEmailBanner, {
 import classNames from "@calcom/lib/classNames";
 import { TOP_BANNER_HEIGHT } from "@calcom/lib/constants";
 import { APP_NAME, DESKTOP_APP_LINK, JOIN_DISCORD, ROADMAP, WEBAPP_URL } from "@calcom/lib/constants";
+import { useFormbricks } from "@calcom/lib/formbricks-client";
 import getBrandColours from "@calcom/lib/getBrandColours";
 import { useBookerUrl } from "@calcom/lib/hooks/useBookerUrl";
 import { useLocale } from "@calcom/lib/hooks/useLocale";
@@ -225,6 +226,8 @@ const Layout = (props: LayoutProps) => {
       });
     return (activeBanners?.length ?? 0) * TOP_BANNER_HEIGHT;
   }, [banners]);
+
+  useFormbricks();
 
   return (
     <>
